@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>單元 01｜緒論與什麼是 AI</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<nav class="border-b border-stone-200 bg-white/70">
+  <div class="max-w-3xl mx-auto px-5 py-3 flex justify-between text-sm">
+    <a href="../index.html" class="text-amber-800 hover:underline">← 返回課程總覽</a>
+    <span class="text-slate-500">單元 01</span>
+  </div>
+</nav>
+
+<main class="max-w-3xl mx-auto px-5 py-10">
+<header class="mb-8">
+  <p class="text-sm text-amber-800">單元 01</p>
+  <h1 class="font-serif text-4xl font-bold leading-tight mt-1">緒論與什麼是 AI</h1>
+  <p class="text-sm text-slate-500 mt-3">建立日期：2026-11-16　預估閱讀：約 12 分鐘</p>
+</header>
+
+<section class="note" aria-label="學習目標">
+  <p class="font-bold">學習目標</p>
+  <ul>
+    <li>說出 AI 三起兩落的時間軸，以及每一波的核心做法</li>
+    <li>認得 1956–2024 年的關鍵里程碑與代表系統</li>
+    <li>列舉 AI 的主要應用領域與兩個未來趨勢</li>
+    <li>分辨 AI 的四種定義（像人／理性 × 思考／行動）</li>
+    <li>解釋理性代理人，以及弱／強人工智慧的差別</li>
+  </ul>
+</section>
+
+<article>
+<h2>一、人工智慧的發展</h2>
+
+<h3>三起兩落</h3>
+<p>AI 的歷史像股價走勢：每一波熱潮靠一種新做法撐起來，碰到瓶頸後退潮，再由下一種做法接手。</p>
+<table class="tbl">
+  <tr><th>階段</th><th>年份</th><th>做法</th><th>為何退潮</th></tr>
+  <tr><td>第 1 波興起</td><td>1956 起</td><td>符號邏輯：把人的思考邏輯放進電腦</td><td>人還無法理解自己是怎麼思考的 → 1974–1980 第 1 次寒冬</td></tr>
+  <tr><td>第 2 波興起</td><td>1980 起</td><td>專家系統：把人類專家的知識放進電腦</td><td>現實中太多難題，人根本說不出規則 → 1987–1993 第 2 次寒冬</td></tr>
+  <tr><td>第 3 波興起</td><td>1993 起</td><td>機器學習：給電腦歷史資料，讓它自己整理規則</td><td>（持續中）</td></tr>
+</table>
+<div class="note"><p>比喻：前兩波是「老師把答案一條條寫下來教電腦」，第三波是「給電腦一大堆例題，讓它自己歸納解法」。</p></div>
+
+<h3>早期萌芽（1950–60 年代）</h3>
+<ul class="tl">
+  <li><b>1956 達特茅斯會議</b>：McCarthy、Minsky、Arthur Samuel 等人與會。McCarthy 用「人工智慧」一詞，與「控制論」做區分，確立 AI 研究領域。</li>
+  <li><b>1956 Logic Theorist</b>（Newell、Simon、Shaw）：模仿人類證明基本邏輯等式，證明了《數學原理》前 52 個定理中的 38 個。</li>
+  <li><b>1956 Los Alamos Chess</b>：Paul Stein 等人在 MANIAC 上寫的第一支（簡化版）西洋棋程式，開啟人機對局的競賽。</li>
+  <li><b>1966 Eliza</b>（Weizenbaum，MIT）：模仿心理醫生訪談的對話機器人，是自然語言處理的先驅。</li>
+</ul>
+
+<h3>人機對決的里程碑</h3>
+<table class="tbl">
+  <tr><th>年份</th><th>系統</th><th>事件</th></tr>
+  <tr><td>1997</td><td>IBM Deep Blue</td><td>以 3.5–2.5 擊敗西洋棋王 Kasparov，首個在標準時限內擊敗世界冠軍的對局系統</td></tr>
+  <tr><td>2011</td><td>IBM Watson</td><td>贏得 Jeopardy 機智問答年度冠軍，獎金 100 萬美元</td></tr>
+  <tr><td>2016</td><td>Google AlphaGo</td><td>以 4：1 擊敗韓國職業 9 段棋士李世乭</td></tr>
+  <tr><td>2017</td><td>AlphaGo（講義標為 AlphaGo Zero）</td><td>以 3：0 擊敗圍棋棋王柯潔</td></tr>
+  <tr><td>2018</td><td>IBM Project Debater</td><td>在辯論賽中擊敗人類頂尖辯論高手</td></tr>
+  <tr><td>2019</td><td>Google AlphaStar</td><td>《星海爭霸 2》人機對抗賽以 10 勝 1 負擊敗職業玩家</td></tr>
+</table>
+
+<h3>AlphaGo Zero：不看人類棋譜的自學</h3>
+<p>AlphaGo Zero 一開始只知道圍棋基本規則，完全靠自我對弈學習：</p>
+<ul>
+  <li><b>3 天</b>：超越擊敗李世乭的 AlphaGo Lee</li>
+  <li><b>21 天</b>：達到 AlphaGo Master 的水準（Master 曾在網路上擊敗 60 位頂尖職業棋士，並在 2017 年以 3：0 擊敗柯潔）</li>
+  <li><b>40 天</b>：超越所有版本，可說成為世界最強；全程無人為介入、不使用歷史資料</li>
+</ul>
+<div class="note"><p>整理時發現：第 12 頁寫「AlphaGo Zero 擊敗柯潔」，但 21 天那頁說擊敗柯潔的是 AlphaGo Master。這裡以 Master 為準，之後可向老師確認。</p></div>
+
+<h3>從遊戲走向科學與創作</h3>
+<table class="tbl">
+  <tr><th>年份</th><th>系統</th><th>成就</th></tr>
+  <tr><td>2020</td><td>AlphaFold（DeepMind）</td><td>用深度學習由蛋白質序列預測結構；第 14 屆 CASP 競賽準確度遠高於其他程式</td></tr>
+  <tr><td>2024</td><td>諾貝爾化學獎</td><td>David Baker（計算蛋白質設計）、Demis Hassabis 與 John Jumper（蛋白質結構預測）</td></tr>
+  <tr><td>2022.02</td><td>AlphaCode</td><td>讀懂程式競賽題目並自動產生程式碼，Codeforces 參賽者中排名前 54%</td></tr>
+  <tr><td>2022.11</td><td>ChatGPT（OpenAI）</td><td>基於文本的大型語言模型，可回答問題、撰寫論文的聊天機器人</td></tr>
+  <tr><td>2022</td><td>Stable Diffusion</td><td>慕尼黑大學 CompVis 團隊發布的文字生成圖像深度學習模型</td></tr>
+  <tr><td>2024</td><td>AlphaProof + AlphaGeometry 2</td><td>國際數學奧林匹亞（IMO）銀牌：42 分拿 28 分（6 題對 4 題），距金牌差 1 分</td></tr>
+</table>
+
+<h2>二、人工智慧的浪潮</h2>
+<p>近年硬體運算效能大幅提升，AI 在許多領域都有突破。</p>
+<table class="tbl">
+  <tr><th>領域</th><th>代表案例</th></tr>
+  <tr><td>法律</td><td>2016 年 IBM 與 Baker &amp; Hostetler 事務所推出 AI 律師 ROSS，協助處理公司破產業務</td></tr>
+  <tr><td>醫療</td><td>2018 年 FDA 批准 IDx-DR 眼科診斷工具，是第一款獲批的 AI 醫療工具</td></tr>
+  <tr><td>文學</td><td>2016 年日本「星新一賞」有 4 篇入圍決賽的小說，其中 1 篇作者不是人類</td></tr>
+  <tr><td>藝術</td><td>2015 年 Google Deep Dream：29 張作品中 6 張以 8,000 美金賣出</td></tr>
+  <tr><td>音樂</td><td>David Cope 的作曲程式 Emmy，統計人類偏好的曲調後創作，並以學習與回饋形成個人風格</td></tr>
+  <tr><td>電影</td><td>《魔詭 Morgan》是第一支由 AI 剪輯的電影預告</td></tr>
+  <tr><td>農業</td><td>日本研發採果機器人，緩解農業勞動力短缺</td></tr>
+  <tr><td>語音助理</td><td>2018 年 Google I/O 發表 Google Assistant，可語音協助訂髮廊和旅館</td></tr>
+  <tr><td>軍事</td><td>2020 年 DARPA 模擬空戰，Heron Systems 的 AI 以 5：0 橫掃 F-16 飛行員</td></tr>
+  <tr><td>無人商店</td><td>Amazon Go：拿了就走、免排隊結帳，2018 年 1 月在西雅圖正式營運</td></tr>
+  <tr><td>工業製造</td><td>2016 年鴻海表示有 28 座工廠可關燈生產（智慧製造）</td></tr>
+</table>
+
+<h3>自駕車分級（SAE 五級，工研院 IEK 2018）</h3>
+<ul>
+  <li><b>Level 0（警示）</b>：車上提供警示聲響或影像，動作全靠人</li>
+  <li><b>Level 1–2（駕駛輔助）</b>：車輛替代駕駛執行 1 項／2 項以上的動作反應</li>
+  <li><b>Level 3</b>：有條件自動化，人必要時可介入（預估 2020 年）</li>
+  <li><b>Level 4</b>：高度自動化，不需人在線上操作（預估 2025 年）</li>
+  <li><b>Level 5</b>：完全自動化，人變成乘客（預估 2030 年）</li>
+</ul>
+
+<h3>未來趨勢</h3>
+<ul>
+  <li><b>Agentic AI（代理型人工智慧）</b>：依照目標自主規劃並完成多步驟任務。運作方式是拆解目標、呼叫軟體工具，再檢查結果並調整下一步。例：研究助理搜尋資料、比對來源、整理成報告後交由人員審核。重點是在授權範圍內自主行動。</li>
+  <li><b>Physical AI（實體人工智慧）</b>：感知真實環境，控制機器與世界互動。透過感測器理解環境、規劃動作，依現場回饋即時修正。例：機器手臂辨識物件位置，調整抓取角度與力道完成搬運。</li>
+  <li>兩者可結合：AI 規劃任務，機器人執行。</li>
+  <li><b>就業衝擊</b>：《經濟學人》2014 年 1 月封面故事引用牛津大學研究，指出未來 20 年約 47% 的現有工作可能被自動化取代。</li>
+</ul>
+
+<h2>三、什麼是 AI？</h2>
+<h3>四種定義</h3>
+<p>各家定義不同，是因為評判標準不同。可用兩個維度整理：<b>思考過程 vs. 行為表現</b>，以及<b>以人類標準衡量 vs. 以理想的「理性」衡量</b>。</p>
+<table class="tbl">
+  <tr><th></th><th>像人類</th><th>理性</th></tr>
+  <tr><th>思考</th><td><b>Thinking Humanly</b>：讓電腦擁有真正的「心智」，自動化決策、解題、學習等人類思考活動（Haugeland 1985；Bellman 1978）</td><td><b>Thinking Rationally</b>：以計算模型研究心智能力，研究讓感知、推理、行動成為可能的計算（Charniak &amp; McDermott 1985；Winston 1992）</td></tr>
+  <tr><th>行動</th><td><b>Acting Humanly</b>：製造出能做「人做才需要智慧」之事的機器（Kurzweil 1990；Rich &amp; Knight 1991）</td><td><b>Acting Rationally</b>：研究智慧代理人的設計，關注人造物的智慧行為（Poole 等 1998；Nilsson 1998）</td></tr>
+</table>
+
+<h3>像人一樣行動：圖靈測試</h3>
+<ul>
+  <li>Turing（1950）〈Computing Machinery and Intelligence〉提出「機器能思考嗎？」「機器能表現得有智慧嗎？」</li>
+  <li><b>做法</b>：人類詢問者隔著屏障對話，分不出對面是真人還是 AI 系統，就算通過。</li>
+  <li>他預測到 2000 年，機器有 30% 機會讓一般人被騙 5 分鐘；預先回應了之後 50 年對 AI 的主要反對論點；並提出 AI 的主要成分：知識、推理、語言理解、學習。</li>
+  <li><b>問題</b>：不可重現、不具建設性、難以做數學分析。</li>
+</ul>
+
+<h3>像人一樣思考：認知科學</h3>
+<ul>
+  <li>要回答「人怎麼思考」，需要關於大腦內部活動的科學理論（認知模型）。難題是抽象層級（知識還是電路？）與驗證（預測並測試人類行為，或由神經資料辨識）。</li>
+  <li>認知科學與認知神經科學，如今都已和 AI 分開。</li>
+  <li>現有理論還解釋不了任何接近人類智慧的東西。</li>
+</ul>
+
+<h3>理性地思考：思維法則</h3>
+<ul>
+  <li>亞里斯多德：研究正確的論證與思考過程。</li>
+  <li>邏輯：為思想提供記號與推導規則。數學與哲學一脈相承通往現代 AI。</li>
+  <li><b>問題</b>：不是所有智慧行為都來自邏輯推敲；而且，思考的目的是什麼？</li>
+</ul>
+
+<h3>理性地行動與理性代理人</h3>
+<ul>
+  <li><b>理性行為</b>＝做對的事；「對的事」是在既有資訊下，預期能讓目標達成最大化的行動。</li>
+  <li><b>代理人（agent）</b>：能感知並行動的實體。抽象來說，是從感知歷史到行動的函數 <code>f: P* → A</code>。</li>
+  <li>針對某類環境與任務，目標是找出表現最好的代理人。</li>
+  <li><b>限制</b>：運算資源有限，完美理性做不到；只能在給定機器資源下設計最好的程式。</li>
+</ul>
+<div class="note"><p>比喻：導航軟體不必知道路況的全部真相，只要依手上的即時資訊選出「預期最快」的路線，就是理性行動。</p></div>
+
+<h3>人工智慧三層次定義</h3>
+<table class="tbl">
+  <tr><th>層次</th><th>說明</th></tr>
+  <tr><td>弱人工智慧（狹隘 AI）</td><td>只要電腦解決某個需要高度智力的問題，不要求像人一樣全面。例：AlphaGo、Watson、自動駕駛。</td></tr>
+  <tr><td>強人工智慧（泛 AI）</td><td>智慧要更全面廣泛，具備推理、學習、規劃、語言溝通、知覺等能力，才可能與人類並駕齊驅。</td></tr>
+  <tr><td>強人工智慧假說（John Searle）</td><td>電腦需擁有跟人類一樣的「心靈」，能認知自我並像人一樣思考。</td></tr>
+</table>
+
+<h3>AI 涵蓋的面向（我國 AI 科研戰略）</h3>
+<ul>
+  <li><b>硬體核心裝置</b>：晶片、雲端運算系統、終端硬體</li>
+  <li><b>演算法技術</b>：類神經網路、專家系統、深度學習／機器學習、開發平台架構、語音辨識、影像辨識、大數據趨勢預測分析</li>
+  <li><b>智慧應用領域</b>：金融科技、智慧製造、智慧醫療／健康、智慧交通</li>
+</ul>
+</article>
+
+<nav class="mt-14 pt-5 border-t border-stone-200 flex justify-between text-sm" aria-label="單元導覽">
+  <span class="text-slate-300">← 上一單元（無）</span>
+  <a href="02-search-algorithms.html" class="text-amber-800 hover:underline">下一單元：搜尋演算法 →</a>
+</nav>
+</main>
+</body>
+</html>

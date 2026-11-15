@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Noto+Sans+TC:wght@400;500&display=swap');
+:root { --paper:#fbfbfa; --ink:#2b2a27; }
+html { scroll-behavior:smooth; }
+body { background:var(--paper); color:var(--ink); font-family:'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif; }
+.font-serif, h1, h2, h3 { font-family:'Noto Serif TC','Songti TC','PMingLiU',serif; }
+article h2 { font-size:1.5rem; font-weight:700; margin:3rem 0 1rem; padding-bottom:.4rem; border-bottom:1px solid #e7e5e0; }
+article h3 { font-size:1.15rem; font-weight:700; margin:1.75rem 0 .5rem; }
+article p { margin:.75rem 0; line-height:1.9; }
+article ul { list-style:disc; padding-left:1.4rem; margin:.5rem 0; }
+article li { line-height:1.85; margin:.2rem 0; }
+.note { background:#fffbeb; border:1px solid #fcd34d; border-left-width:4px; border-radius:.375rem; padding:.9rem 1.1rem; margin:1.25rem 0; }
+.note p { margin:.25rem 0; }
+.tbl { width:100%; border-collapse:collapse; margin:1rem 0; font-size:.95rem; }
+.tbl th, .tbl td { border:1px solid #e0ddd6; padding:.55rem .75rem; text-align:left; vertical-align:top; line-height:1.7; }
+.tbl th { background:#f3f1ec; font-weight:500; }
+.tl li { margin:.35rem 0; }
+:focus-visible { outline:2px solid #b45309; outline-offset:2px; }
+.sudoku { border-collapse:collapse; margin:1rem auto; }
+.sudoku td { width:2.2rem; height:2.2rem; text-align:center; border:1px solid #cfcbc2; font-weight:700; }
+.sudoku tr:nth-child(3n) td { border-bottom:2px solid #2b2a27; }
+.sudoku tr:first-child td { border-top:2px solid #2b2a27; }
+.sudoku td:nth-child(3n) { border-right:2px solid #2b2a27; }
+.sudoku td:first-child { border-left:2px solid #2b2a27; }
